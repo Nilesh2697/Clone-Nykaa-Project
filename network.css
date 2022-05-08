@@ -1,0 +1,274 @@
+/* The sidebar menu */
+body{
+    background-color: #f3f4f5;
+}
+#nav-main{
+    background-color: white;
+    width: 100%;
+    height: 150px;
+}
+/* #navbar{
+    display: flex;
+    width: 100%;
+    justify-content: left;
+    gap: 10%;
+    margin: auto;
+    position: fixed;
+    float: right;
+    overflow: hidden;
+    
+    padding-left: 180px;
+    
+    height: 50px;
+    margin-top: 60px;
+    background-color: white;
+    
+    
+} */
+/* Style the navbar */
+#navbar {
+    overflow: hidden;
+    background-color: white;
+  }
+  
+  /* Navbar links */
+  #navbar a {
+    float: left;
+    display: block;
+    /* color: #f2f2f2; */
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
+  #navbar>a{
+      font-size: 20px;
+      padding-left: 180px;
+      color: black;
+      
+      font-family: sans-serif;
+  }
+  #navbar>a:hover{
+      color: #fd3c86;
+  }
+  
+  /* Page content */
+  .content {
+    padding: 16px;
+  }
+  
+  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+  .sticky + .content {
+    padding-top: 60px;
+  }
+
+#navbar2{
+    display: flex;
+    justify-content: flex-start;
+    gap: 30%;
+  /* padding-top: 50px; */
+  width: 80%;
+  margin: auto;
+  padding-top: 10px;
+  
+}
+
+#navbar2>div>img{
+    width: 100px;
+    height: 50px;
+}
+#login{
+    display: flex;
+    gap: 10px;
+}
+#login>div>i{
+    color: darkgray;
+    font-size: 40px;
+    margin-top: 10px;
+    margin-left: 10px;
+    cursor: pointer;  
+}
+#login>div>i:hover{
+    background-color:#f3f4f5 ;
+    border-radius: 50%;
+} 
+#login>div>p{
+    font-size: 11px;
+    color: gray;
+}
+  
+
+  
+ 
+
+  #main-body{
+    margin-top: 10px;
+}
+
+
+#nav-head{
+background-color: #f3f4f5;
+margin-top: -10px;
+
+}
+#sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* padding-top: 10px; */
+    margin-left: 75%;
+    margin-top: 180px;
+    background-color: white;
+    float: right;
+    margin-right: 100px;
+    
+   
+    
+    }
+    
+    #sidebar div {
+    padding: 8px;
+    font-size: 18px;
+    display: block;
+    font-size: 16px;
+    }
+    
+    /* .fa-solid fa-arrow-trend-up{
+        color: #fd3c86;
+    } */
+    .up-trend{
+        color: #fd3c86;
+        margin-right: 10px;
+    }
+    .right-arrow{
+        float: right;
+        margin-right: 10px;
+    }
+
+    /* body starts */
+    #body-text {
+    margin-left: 150px;
+    font-size: 18px;
+   width: 62%;
+   
+   
+    }
+    #body-text>div{
+        background-color: white;
+    }
+
+    #body-item1{
+width: 100%;
+height: 110px;
+    }
+
+    #body-item1>i{
+        color: darkgray;
+        font-size: 40px;
+        margin-top: 10px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+    #body-item1>i:hover{
+       background-color:#f3f4f5 ;
+       border-radius: 50%;
+    }
+
+    #body-item1>input{
+        border: 1px solid lightgrey;
+        width: 90%;
+        height: 40px;  
+        margin-left: 10px;
+        cursor: pointer;
+        
+    }
+
+    #post-btn{
+        display: flex;
+        gap: 40px;
+        margin-left: 80px;
+        font-size: 12px;
+        color: gray;
+        margin-top: 5px;
+        
+       
+    }
+    .item-button{
+        background-color: #f3f4f5;
+        width: 100px;
+        height: 20px;
+        border-radius: 40px;
+        padding-left: 20px;
+        padding-bottom: 15px;
+        cursor: pointer;
+        
+    }
+    #body-item2{
+        margin-top: 10px;
+
+    }
+    #body-item2>img{
+        width: 100%;
+    }
+    #body-item2>p{
+        font-weight: bold;
+        text-align: center;
+        padding: 20px;
+    }
+
+    #answerBox{
+        height: 250px;
+       
+    }
+    #answerBox>h4{
+        padding: 10px;
+        padding-left: 20px;
+    }
+    #answerBox>button{
+        background-color: white;
+        color: #fd3c86;
+        /* text-align: center;
+        margin: auto; */
+        padding: 10px;
+        border: 1px solid gray;
+        border-radius: 10px;
+        width: 35%;
+        margin-left: 20%;
+        cursor: pointer;
+    }
+    #answerBox>button:hover{
+        background-color: #f3f4f5;
+    }
+    #userbox{
+        padding-left: 20px;
+        display: flex;
+        gap: 10px;
+        margin-top: 40px;
+    }
+    #userbox>i{
+        font-size: 35px;
+        color: gray;
+    }
+    #userbox>div>h5{
+        font-weight: lighter;
+        margin-top: -5px;
+       
+    }
+    #userbox>div>h6{
+        font-weight: lighter;
+        margin-top: -20px;
+        color: gray;
+      
+    }
+    #userAnswer{
+        margin-left: 60px;
+    margin-top: -10px;
+    }
