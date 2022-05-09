@@ -1,3 +1,6 @@
+import navbar from "./component/navbar.js";
+document.getElementById("navbar").innerHTML = navbar();
+
 document.querySelector("#form").addEventListener("submit",loginfn);
 
 var regdusers=JSON.parse(localStorage.getItem("usercreds"));

@@ -20,3 +20,6 @@ background-color: #eee;
 justify-content: center;
 
 }
+#prod-img{
+    cursor: pointer;
+}

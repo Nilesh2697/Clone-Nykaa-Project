@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+    <style>
+        /* img {
+            height: 200px;
+        } */
+
+        #container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <p></p>
+
+    <div id="container">
+    </div>
+</body>
+
+</html>
+
+<script type="module">
+    import navbar from "./component/navbar.js";
+    document.getElementById("navbar").innerHTML = navbar();
+</script>
+<script>
+    let cartData = JSON.parse(localStorage.getItem("addToBagdata"));
+    // console.log(bagData)
+
+    // var cartData = JSON.parse(localStorage.getItem("addToBagData"))||[]
+    // console.log(cartData)
+    var sum = 0
+
+    var total = cartData.reduce(function (sum, elem, index, arr) {
+        return sum + (Math.floor(Number(elem.price)) * 75)
+    }, 0)
+
+    var length = cartData.length
+    console.log(length)
+
+    console.log(+total)
+
+
+    document.querySelector("p").innerText = `Rs.${total}`;
+
+    cartData.map(function (elem, index) {
+        var box = document.createElement("div")
+        // box.setAttribute = ("id","cartData")
+
+        var img = document.createElement("img")
+        img.src = elem.image_link
+
+
+        var name = document.createElement("P")
+        name.textContent = elem.name
+
+        var price = document.createElement("p")
+        price.innerText = `Rs.${(Math.floor(Number(elem.price)) * 75)}`;
+
+        var btn = document.createElement("button")
+        btn.innerText = "Remove"
+        btn.addEventListener("click", function () {
+            removeItem(elem, index)
+        })
+
+        box.append(img, name, price, btn)
+
+        document.querySelector("#container").append(box)
+    });
+    function removeItem(elem, index) {
+        console.log(elem, index)
+        cartData.splice(index, 1)
+        console.log(cartData)
+        localStorage.setItem("cart", JSON.stringify(cartData))
+        window.location.reload()
+    }
+
+</script>
