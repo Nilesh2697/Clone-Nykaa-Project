@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+        #video-section {
+            position: relative;
+            width: 100%;
+        }
+
+        #header-img {
+            position: absolute;
+            top: 11%;
+            height: 150px;
+            width: 300px;
+            right: 40%;
+        }
+
+        #videoImg_Header {
+            width: 100%;
+        }
+
+        #week_highlight_container {
+            background-image: url("https://www.nykaa.com/beauty-blog//images/latest-edition/1643872930.jpg");
+        }
+
+        #title_weeks {
+            font-size: 48px;
+            font-family: 'Bebas Neue', cursive;
+            width: 80%;
+            text-align: center;
+            margin: auto;
+            background-color: white;
+            margin-top: 20px;
+        }
+
+        #top_navbar {
+            background-color: white;
+            width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        #top_navbar_dropdown {
+            position: relative;
+            display: inline-block;
+            font-size: 16px;
+        }
+
+        #top_navbar_dropdown_content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        #top_navbar_dropdown:hover {
+            color: #f70075;
+        }
+
+        #top_navbar_dropdown_content a:hover {
+            background-color: #ddd;
+        }
+
+        #top_navbar_dropdown:hover #top_navbar_dropdown_content {
+            display: block;
+        }
+
+        #top_navbar_dropdown_content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        #searchBoxInput {
+            background: white;
+            max-width: 80%;
+            margin: auto;
+            margin-top: -76px;
+            position: sticky;
+            top: -86px;
+            z-index: 99;
+            display: flex;
+            align-items: center;
+            height: 70px;
+            border-bottom: 2px solid white;
+        }
+
+        #moodInputBox {
+            width: 475px;
+            height: 38px;
+            margin-left: 50px;
+        }
+
+        #searchMood {
+            font-size: 18px;
+            background-color: #3f414d;
+            color: white;
+            height: 42px;
+        }
+
+        #weeksHighlightGrid_Container {
+            display: grid;
+            grid-template-columns: repeat(3, 32.6%);
+            grid-template-rows: auto;
+            gap: 10px;
+            width: 80%;
+            margin: auto;
+            margin-top: 10px;
+        }
+
+        #makeup_Container {
+            background-color: white;
+            width: 80%;
+            margin: auto;
+        }
+
+        #makeupTitle_Container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            align-items: center;
+        }
+
+        #makeupTitle_Container_innerFlex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #makeup_submenu_color_change {
+            color: #fc2779;
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        #makeup_con_submenu {
+            display: flex;
+        }
+
+        #makeupGridContainer,
+        #skinGridContainer {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto;
+            gap: 20px;
+        }
+
+        #popularArtitleTitle_Container {
+            font-family: 'Bebas Neue', cursive;
+        }
+
+        #popularArtitle_Container {
+            width: 80%;
+            margin: auto;
+            font-size: 48px;
+            color: #3f414d;
+        }
+
+        #popularArtitleFlex_Container {
+            display: flex;
+            gap: 20px;
+        }
+
+        #subscribeFooter {
+            height: 360px;
+            background-image: linear-gradient(104deg, #fda8c9, #6094ea);
+        }
+
+        #subscribeFooter_Box {
+            height: 300px;
+            width: 740px;
+            margin: auto;
+            margin-left: 350px;
+            align-items: center;
+        }
+
+        #subscribeFooter_Box_Title {
+            display: flex;
+            font-family: Playlist-Orna;
+            font-size: 38px;
+            margin: auto;
+            text-align: center;
+            color: #fff;
+            margin-left: 80px;
+            padding: 20px;
+        }
+
+        #subBox{
+            display: flex;
+        }
+
+        #subBox_Div1{
+            background-color: #ff96c7;
+            width: 195px;
+            height: 202px;
+        }
+
+        #subBox_Div2{
+            background-color: white;
+            width: 540px;
+            height: 180px;
+            padding-left: 50px;
+            padding-top: 20px;
+        }
+
+        #subscribeBtn{
+            cursor: pointer;
+            background-color: #f7257a;
+            color: white;
+            padding: 0px 30px;
+            font-size: 14px;
+            border: 0px;
+            padding: 8px;
+            margin: 0px 0px 0px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="videoImg_Header">
+        <video playsinline id="video-section" loop autoplay="autoplay" muted>
+            <source src="https://www.nykaa.com/beauty-blog/assets/header.mp4" type="video/mp4">
+            Your browser does not support the video.
+
+        </video>
+        <img id="header-img" src="https://www.nykaa.com/beauty-blog/assets/bb_video.png"></img>
+        <div id="searchBoxInput">
+            <a href="https://www.nykaa.com/beauty-blog/"><img
+                    src=" https://www.nykaa.com/beauty-blog/assets/bb-logo-mobile.png " alt="LOGO"></a>
+            <input id="moodInputBox" type="text" placeholder="What are you in the mood for?">
+            <button id="searchMood">Search</button>
+        </div>
+    </div>
+
+    <div id="week_highlight_container">
+        <div id="top_navbar">
+            <div id="top_navbar_dropdown">
+                <p id="top_navbar_dropdown_btn">Makeup</p>
+                <div id="top_navbar_dropdown_content">
+                    <a href="https://www.nykaa.com/beauty-blog/category/makeup/nail-art?navloc=menu">Nails</a>
+                    <a href="">Bridal Makeup</a>
+                    <a href="">Makeup Looks</a>
+                    <a href="">Face</a>
+                    <a href="">Eyes</a>
+                    <a href="">Lips</a>
+                </div>
+            </div>
+            <div id="top_navbar_dropdown">
+                <p id="top_navbar_dropdown_btn">Skin</p>
+                <div id="top_navbar_dropdown_content">
+                    <a href="https://www.nykaa.com/beauty-blog/category/skin/skin-types-care?navloc=menu">Skin Types &
+                        Care</a>
+                    <a href="https://www.nykaa.com/beauty-blog/category/skin/oily-skin-and-acne?navloc=menu">Oily Skin
+                        and Acne</a>
+                    <a href="">Anti Ageing</a>
+                    <a href="">Sun Protection</a>
+                    <a href="">Bridal Skin</a>
+                </div>
+            </div>
+            <div id="top_navbar_dropdown">
+                <p id="top_navbar_dropdown_btn"> Hair </p>
+                <div id="top_navbar_dropdown_content">
+                    <a href=https://www.nykaa.com/beauty-blog/category/hair/hair-treatment?navloc=menu>Hair Care</a>
+                    <a href="">Hair Styling</a>
+                    <a href="">Hair Colour</a>
+                    <a href="">Bridal Hair</a>
+                </div>
+            </div>
+            <div id="top_navbar_dropdown">
+                <p id="top_navbar_dropdown_btn"> Personal Care </p>
+                <div id="top_navbar_dropdown_content">
+                    <a href="https://www.nykaa.com/beauty-blog/category/personal-care/hand-foot-care?navloc=menu">Hand &
+                        Foot Care</a>
+                    <a href="">Nail Care</a>
+                    <a href="">Personal Hygiene</a>
+                    <a href="">Lingerie</a>
+                </div>
+            </div>
+            <div id="top_navbar_dropdown">
+                <p id="top_navbar_dropdown_btn"> Wellness </p>
+                <div id="top_navbar_dropdown_content">
+                    <a href="https://www.nykaa.com/beauty-blog/category/health-wellness/fitness-workouts?navloc=menu">Fitness
+                        & Weight Loss</a>
+                    <a href="">Diet & Recipes</a>
+                    <a href="">Herbal & Home Remedies</a>
+                    <a href="">Pregnancy</a>
+                    <a href="">Bridal Wellness</a>
+                    <a href="">Working Women</a>
+                </div>
+            </div>
+            <div id="top_navbar_dropdown">
+                <p id="top_navbar_dropdown_btn"> Product Reviews </p>
+                <div id="top_navbar_dropdown_content">
+                    <a href="https://www.nykaa.com/beauty-blog/category/product-reviews/new-launches?navloc=menu">New
+                        Launches</a>
+                    <a href="">Top Brands</a>
+                    <a href="">Makeup</a>
+                    <a href="">Skin</a>
+                    <a href="">Wellness</a>
+                    <a href="">Herbal</a>
+                    <a href="">Fragrances</a>
+                    <a href="">Gifting</a>
+                </div>
+            </div>
+            <div id="top_navbar_dropdown">
+                <p id="top_navbar_dropdown_btn">Men</p>
+                <div id="top_navbar_dropdown_content">
+                    <a href="https://www.nykaa.com/beauty-blog/category/men/shaving?navloc=menu">Shaving</a>
+                    <a href="">Grooming Advice</a>
+                </div>
+            </div>
+            <div id="top_navbar_dropdown">
+                <p id="top_navbar_dropdown_btn"> Celebrity </p>
+                <div id="top_navbar_dropdown_content">
+                    <a
+                        href="https://www.nykaa.com/beauty-blog/category/celebrity/fashion-trends?navloc=menu">Fashion</a>
+                    <a href="">Beauty</a>
+                </div>
+            </div>
+            <div id="top_navbar_dropdown">
+                <p id="top_navbar_dropdown_btn"> Luxe </p>
+                <div id="top_navbar_dropdown_content">
+                    <a href="https://www.nykaa.com/beauty-blog/category/luxe/luxe-makeup?navloc=menu">Makeup</a>
+                    <a href="">Skin</a>
+                    <a href="">Hair</a>
+                    <a href="">Product Reviews</a>
+                </div>
+            </div>
+            <div id="top_navbar_dropdown">
+                <a href="https://www.nykaa.com/?utm_source=beautybook&utm_medium=menu&utm_campaign=shop_at_nykaa">
+                    <p id="top_navbar_dropdown_btn">Shop@Nykaa</p>
+                </a>
+            </div>
+
+        </div>
+        <div id="title_weeks">
+            THIS WEEK'S HIGHLIGHTS
+        </div>
+        <div id="weeksHighlightGrid_Container"></div>
+        <br>
+    </div>
+
+    <div id="makeup_Container">
+        <div id="makeupTitle_Container">
+            <div style="font-family: Bebas Neue, cursive; font-size: 48px; color: #3f414d;">Makeup</div>
+            <div id="makeupTitle_Container_innerFlex">
+                <h4>READ ALL UP</h4>
+                <img style="width: 15px; height: 15px;" src="https://www.nykaa.com/beauty-blog/assets/larrow.svg">
+            </div>
+        </div>
+        <hr>
+        <div id="makeup_con_submenu">
+            <div>
+                <p>Makeup Topics: |</p>
+            </div>
+            <div id="makeup_submenu_color_change">
+                <p>NAILS</p>
+                <p>BRIDAL MAKEUP</p>
+                <p>MAKEUP LOOKS</p>
+                <p>FACE</p>
+                <p>EYES</p>
+                <p>LIPS</p>
+            </div>
+        </div>
+        <hr>
+        <div id="makeupGridContainer"></div>
+    </div>
+
+    <div style="background-color: #f7f7f7;">
+        <div id="popularArtitle_Container">
+            <div id="popularArtitleTitle_Container">
+                <div style="font-size: 48px; color: #3f414d;">Popular Article</div>
+            </div>
+            <div id="popularArtitleFlex_Container"></div>
+        </div>
+    </div>
+
+    <div id="makeup_Container">
+        <div id="makeupTitle_Container">
+            <div style="font-family: Bebas Neue, cursive; font-size: 48px; color: #3f414d;">Skin</div>
+            <div id="makeupTitle_Container_innerFlex">
+                <h4>READ ALL SKIN</h4>
+                <img style="width: 15px; height: 15px;" src="https://www.nykaa.com/beauty-blog/assets/larrow.svg">
+            </div>
+        </div>
+        <hr>
+        <div id="makeup_con_submenu">
+            <div>
+                <p>Skin Topics: | </p>
+            </div>
+            <div id="makeup_submenu_color_change">
+                <p>SKIN TYPES & CARE</p>
+                <p>OILY SKIN AND ACNE</p>
+                <p>ANTI AGEING</p>
+                <p>SUN PROTECTION</p>
+                <p>BRIDAL SKIN</p>
+            </div>
+        </div>
+        <hr>
+        <div id="skinGridContainer"></div>
+    </div>
+
+    <div id="subscribeFooter">
+        <div id="subscribeFooter_Box">
+            <div id="subscribeFooter_Box_Title">
+                <i style="padding: 10px;" class="fa fa-heart"></i>
+                <i style="padding: 10px;" class="fa fa-heart"> </i>
+                <i style="padding: 10px;" class="fa fa-heart"> </i>
+                Hey, Gorgeous!
+                <i style="padding: 10px;" class="fa fa-heart"> </i>
+                <i style="padding: 10px;" class="fa fa-heart"> </i>
+                <i style="padding: 10px;" class="fa fa-heart"> </i>
+            </div>
+
+            <div id="subBox">
+                <div id="subBox_Div1">
+                    <img style="height: 100px; width: 100px; margin: 56px 48px;" src="https://www.nykaa.com/beauty-blog/assets/bb-letterbox.png" alt="No Image">
+                </div>
+                <div id="subBox_Div2">
+                    <p style="font-size: 20px;">Get your daily dose of beauty inspo delivered to your inbox</p>
+                    <input style="outline: 0;border-width: 0 0 2px;border-color: #f7257a;width: 320px;" type="text" placeholder="Enter you email ID">
+                    <button id="subscribeBtn">SUBSCRIBE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script type="module">
+    import weekHighlight_Data from "../Components_blog/DataCollection.js";
+    import { getData, appendData } from "../Components_blog/getAppend.js"
+
+    console.log(weekHighlight_Data);
+
+    weekHighlight_Data.forEach((el) => {
+        let mainDiv = document.getElementById("weeksHighlightGrid_Container");
+
+        let div = document.createElement("div");
+        div.style.backgroundColor = "white";
+
+        let img = document.createElement("img");
+        img.src = el.img;
+        img.style.height = "200px";
+        img.style.width = "350px";
+
+
+
+        if (el.tag != "") {
+            let title = document.createElement("p");
+            title.innerText = el.title;
+            title.style.fontSize = "20px";
+
+            let innerDiv = document.createElement("div");
+
+            let tag = document.createElement("p");
+            tag.innerText = el.tag;
+            tag.style.backgroundColor = "#ffe7f2";
+            tag.style.width = "fit-Content"
+            tag.style.padding = "5px";
+            tag.style.color = "#fd9f8b";
+            tag.style.fontSize = "14px"
+
+            innerDiv.append(title, tag);
+            div.append(img, innerDiv);
+        }
+        else {
+            let title = document.createElement("p");
+            title.innerText = el.title;
+
+            div.append(img, title);
+        }
+        mainDiv.append(div);
+    });
+
+    async function makeup_GridCon(url) {
+        let data = await getData(url);
+        await appendData(data, "makeupGridContainer");
+        console.log(data);
+    }
+    makeup_GridCon("http://localhost:4000/makeup_con");
+
+    async function popularArticle_GridCon(url) {
+        let data = await getData(url);
+        await appendData(data, "popularArtitleFlex_Container");
+        console.log(data);
+    }
+    popularArticle_GridCon("http://localhost:4000/blogs_popular_articles");
+
+    async function skin_GridCon(url) {
+        let data = await getData(url);
+        await appendData(data, "skinGridContainer");
+        console.log(data);
+    }
+    skin_GridCon("http://localhost:4000/skin");
+</script>

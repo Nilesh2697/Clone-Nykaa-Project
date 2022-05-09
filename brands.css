@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+   
+    /* grid-template-columns: 25% 75%; */
+    gap: 20px;
+    
+}
+
+#container2{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+ gap: 20px;
+
+}
+
+#container1{
+margin-left:120px ;
+width:15%;
+background-color: #eee;
+justify-content: center;
+
+}
