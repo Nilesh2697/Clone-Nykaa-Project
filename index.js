@@ -1,3 +1,5 @@
+import navbar from "./component/navbar.js";
+document.getElementById("navbar").innerHTML = navbar();
 // TRENDING STORES & GUIDES
 let userName =JSON.parse(localStorage.getItem("user"))||[];
 console.log(userName)
@@ -302,10 +304,7 @@ function display()
     }
 }
 setInterval(nxtbut,3000)
-// harapriya
 
-
-// Govind
 // Nav Bar
 
 let a=document.getElementById("Sbar");

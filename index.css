@@ -329,7 +329,6 @@ body{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-/* HaraPriya Start*/
 #allimg{
     position: relative;
     text-align: center;
@@ -562,9 +561,6 @@ a>p:hover{
     font-size: 13px;
     color: white;
 }  
-/* HaraPriya End */
-
-/* Govind - Navbar */
 
 #header{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -851,7 +847,6 @@ body{
     width: 350px;
     height: 400px;
     
-    /* top: 60px; */
     background-color: gray;
     position: absolute;
     top: 100px;
@@ -876,4 +871,3 @@ body{
   ::-webkit-scrollbar-track:hover{
     background: rgb(65, 63, 63);
   }
-/* Govind - Navbar End */
