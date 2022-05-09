@@ -1,7 +1,7 @@
 import navbar from "./component/navbar.js";
 document.getElementById("navbar").innerHTML = navbar();
 
-const url = "http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline";
+const url = "https://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline";
 
 
 fetch(url).then(function (res) {
